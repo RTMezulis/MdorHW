@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {timer} from "rxjs";
 
 @Component({
   selector: 'app-clock',
@@ -6,12 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./clock.component.css']
 })
 export class ClockComponent implements OnInit {
-  dateTime: Date;
+  Time?: Date
 
   constructor() { }
 
   ngOnInit(): void {
-  this.dateTime = new Date()
+  timer(0, 1000).subscribe(() => {
+    this.Time = new Date()
+  })
   }
 
 }
