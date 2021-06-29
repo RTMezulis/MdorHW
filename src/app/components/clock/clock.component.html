@@ -1,1 +1,9 @@
-<h3>{{ Time | date:'HH:mm'}}</h3>
+<div class="clock">
+  <div class="glow">
+    <div class="clock-border">
+      <div class="timer">
+        <h3>{{ Time |async|date:'HH:mm:ss'}}</h3>
+      </div>
+    </div>
+  </div>
+</div>
